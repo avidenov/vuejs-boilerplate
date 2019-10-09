@@ -23,13 +23,9 @@
         }),
 
         mounted: function() {
-
         },
 
         methods: {
-            getLoggedUser: function() {
-
-            }
         },
     }
 </script>

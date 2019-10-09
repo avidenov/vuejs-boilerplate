@@ -5,8 +5,8 @@
   "author": "AVidenov",
   "private": true,
   "scripts": {
-    "watch": "cross-env NODE_ENV=development node_modules/webpack/bin/webpack.js --watch --progress --hide-modules",
-    "production": "export NODE_ENV=production && webpack --hide-modules"
+    "watch": "webpack --mode=development --watch --hide-modules --progress",
+    "production": "webpack --mode=production --hide-modules"
   },
   "dependencies": {
     "@babel/plugin-proposal-class-properties": "^7.5.5",
@@ -28,12 +28,14 @@
     "vue-template-compiler": "^2.6.10",
     "vuex": "^3.1.1",
     "webpack": "^4.41.0",
+    "webpack-cli": "^3.3.9",
     "webpack-visualizer-plugin": "^0.1.11"
   },
   "devDependencies": {
     "@babel/core": "^7.6.3",
     "@babel/plugin-proposal-object-rest-spread": "^7.6.2",
     "@babel/plugin-syntax-dynamic-import": "^7.2.0",
+    "@babel/plugin-transform-async-to-generator": "^7.5.0",
     "@babel/plugin-transform-runtime": "^7.6.2",
     "@babel/preset-env": "^7.6.3",
     "@babel/runtime": "^7.6.3",
@@ -42,8 +44,7 @@
     "resolve-url-loader": "^3.1.0",
     "sass": "^1.23.0",
     "sass-loader": "^8.0.0",
-    "vee-validate": "^3.0.11",
-    "webpack-cli": "^3.3.9"
+    "vee-validate": "^3.0.11"
   },
   "license": "ISC"
 }

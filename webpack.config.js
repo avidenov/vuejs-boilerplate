@@ -15,13 +15,15 @@ const projectEntryPoints = {
     main: path.resolve(__dirname, './assets/scripts/app.js'),
 };
 
-const projectAliases = {
+const resolvedExtensions = ['.js', '.vue', '.json', '.scss', '.sass'];
+
+const resolvedAliases = {
     styles: path.resolve(__dirname, './assets/styles'),
     pages: path.resolve(__dirname, './assets/scripts/pages'),
     components: path.resolve(__dirname, './assets/scripts/components')
 };
 
-const projectStaticAssets = [
+const staticAssetsToCopy = [
     {
         from: path.resolve(__dirname, './assets/fonts'),
         to: path.resolve(__dirname, './public/assets/fonts')
@@ -34,28 +36,18 @@ const projectStaticAssets = [
 
 module.exports = (env, argv) => ({
     entry: projectEntryPoints,
-    watch: argv.mode === 'development' ? true : false,
-    watchOptions: {
-        aggregateTimeout: 300,
-        poll: 1000,
-        ignored: /node_modules/,
-    },
+    mode: argv.mode === 'development' ? 'development' : 'production',
+    devtool: 'inline-source-map',
     module: {
         rules: [
             {
                 test: /\.vue$/,
                 exclude: /(node_modules)/,
-                resolve: {
-                    extensions: ['.vue'],
-                },
                 loader: 'vue-loader',
             },
             {
-                test: /\.(js|vue)$/,
+                test: /\.(js)$/,
                 exclude: /(node_modules)/,
-                resolve: {
-                    extensions: ['.js'],
-                },
                 loader: 'babel-loader',
                 query: {
                     presets: [['@babel/preset-env']],
@@ -67,9 +59,7 @@ module.exports = (env, argv) => ({
             },
             {
                 test: /\.(sa|sc|c)ss$/,
-                resolve: {
-                    extensions: ['.scss', '.sass'],
-                },
+                exclude: /(node_modules)/,
                 use: [
                     {
                         loader: MiniCssExtractPlugin.loader,
@@ -128,13 +118,14 @@ module.exports = (env, argv) => ({
         new MiniCssExtractPlugin({
             filename: '/styles/[name].css',
         }),
-        new CopyWebpackPlugin(projectStaticAssets),
+        new CopyWebpackPlugin(staticAssetsToCopy),
     ],
     output: {
         path: path.resolve(__dirname, './public/assets/'),
         filename: 'scripts/[name].js',
     },
     resolve: {
-        alias: projectAliases,
+        extensions: resolvedExtensions,
+        alias: resolvedAliases,
     },
 });

@@ -1,6 +1,6 @@
 import * as types from '../mutation-types'
 
-let apiUrl = 'https://api.taylorandhart.com';
+let apiUrl = 'https://api.vuejs-boilerplate.com';
 
 if(window.apiUrl) {
     apiUrl = window.apiUrl;
