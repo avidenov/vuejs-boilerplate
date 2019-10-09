@@ -1,0 +1,94 @@
+/// -----------------------------------------------------------------------------
+/// This file contains all application-wide Sass variables.
+/// -----------------------------------------------------------------------------
+
+/// Default font family
+/// @type List
+$default-font-stack: -apple-system, ".SFNSText-Regular", "San Francisco", "Roboto", "Segoe UI", "Helvetica Neue", "Lucida Grande", sans-serif !default;
+
+/// Icon font family
+/// @type List
+$icon-font: 'CPQ-Icons' !default;
+
+/// White
+/// @type Color
+$white: rgb(255, 255, 255) !default;
+
+/// Lightest Grey
+/// @type Color
+$lightest-grey: rgb(244, 245, 247) !default;
+
+/// Grey
+/// @type Color
+$grey: rgb(154, 154, 154) !default;
+
+/// Dark Grey
+/// @type Color
+$dark-grey: rgb(94, 94, 94) !default;
+
+/// Black
+/// @type Color
+$black: rgb(0, 0, 0) !default;
+
+/// Smaller text size
+/// @type Length
+$smaller-font-size: 10px;
+
+/// Small line height
+/// @type Length
+$smaller-line-height: 12px;
+
+/// Small text size
+/// @type Length
+$small-font-size: 11px;
+
+/// Small line height
+/// @type Length
+$small-line-height: 14px;
+
+/// Regular text size
+/// @type Length
+$regular-font-size: 12px;
+
+/// Regular line height
+/// @type Length
+$regular-line-height: 18px;
+
+/// Medium text size
+/// @type Length
+$medium-font-size: 14px;
+
+/// Medium line height
+/// @type Length
+$medium-line-height: 24px;
+
+/// Large text size
+/// @type Length
+$large-font-size: 16px;
+
+/// Large line height
+/// @type Length
+$large-line-height: 28px;
+
+/// Breakpoints map
+/// @prop {String} keys - Keys are identifiers mapped to a given length
+/// @prop {Map} values - Values are actual breakpoints expressed in pixels
+$breakpoints: (
+    'mobile-xs': (max-width: 300px),
+    'mobile-sm': (max-width: 415px),
+    'mobile-md': (max-width: 640px),
+    'mobile-lg': (max-width: 768px),
+    'mobile-xl': (max-width: 1024px),
+    'desktop-sm': (max-width: 1280px),
+    'desktop-md': (max-width: 1366px),
+    'desktop-lg': (max-width: 1440px),
+    'desktop-xl': (max-width: 1600px),
+) !default;
+
+/// Relative or absolute URL where all assets are served from
+/// @type String
+/// @example scss - When using a CDN
+/// $base-url: 'http://cdn.example.com/assets/';
+$base-url: '/' !default;
+
+$max-width: 1900px;

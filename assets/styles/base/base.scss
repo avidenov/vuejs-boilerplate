@@ -1,0 +1,41 @@
+/**
+ * Set up a decent box model on the root element
+ */
+html {
+  padding: 0;
+  margin: 0;
+  background-color: $white;
+  box-sizing: border-box;
+}
+
+/**
+ * Make all elements from the DOM inherit from the parent box-sizing
+ * Since `*` has a specificity of 0, it does not override the `html` value
+ * making all elements inheriting from the root box-sizing value
+ * See: https://css-tricks.com/inheriting-box-sizing-probably-slightly-better-best-practice/
+ */
+*, *::before, *::after {
+  box-sizing: inherit;
+}
+
+/**
+ * Removes the tap background color for webkit devices
+ */
+* {
+  -webkit-backface-visibility:  hidden;
+  -webkit-tap-highlight-color:  transparent;
+}
+
+/**
+ * Basic styles for links
+ */
+a {
+  text-decoration: none;
+  color: $grey;
+}
+
+input, button, select, textarea {
+  font-family: $default-font-stack;
+  border: none;
+  outline: none;
+}
