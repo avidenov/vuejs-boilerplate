@@ -15,7 +15,7 @@
 
 <script>
     import { mapGetters } from 'vuex'
-    import QuotationName from '../components/quotation-name';
+    import QuotationName from 'components/quotation-name';
 
     export default {
         components: {

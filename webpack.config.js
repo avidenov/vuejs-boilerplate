@@ -12,7 +12,7 @@ const OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 const VueLoaderPlugin = require('vue-loader/lib/plugin');
 
 const projectEntryPoints = {
-    main: path.resolve(__dirname, './assets/scripts/app.js'),
+    main: path.resolve(__dirname, './assets/scripts/app.js')
 };
 
 const resolvedExtensions = ['.js', '.vue', '.json', '.scss', '.sass'];

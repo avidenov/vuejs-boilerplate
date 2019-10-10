@@ -23,9 +23,11 @@
         }),
 
         mounted: function() {
+
         },
 
         methods: {
+
         },
     }
 </script>

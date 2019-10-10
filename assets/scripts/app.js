@@ -1,5 +1,5 @@
 'use strict';
-import style from 'styles/main.scss';
+import style from 'styles/main';
 
 import { axios } from './plugins';
 import Vue from 'vue';
